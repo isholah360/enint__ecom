@@ -47,7 +47,7 @@ const LoginForm: React.FC = () => {
         <h2 className="text-lg font-semibold mb-4 text-center  de-h2">Login</h2>
         <div className="mb-4">
           <label htmlFor="username" className="block mb-2">
-            Username
+            Email
           </label>
           <br className="my-2" />
           <input
