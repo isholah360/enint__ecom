@@ -40,7 +40,8 @@ const Navbar: React.FC = () => {
           <Link href="/product">Products</Link>
           {user ? (
             <>
-              <button onClick={logout}>Logout</button>
+                <Link href="/"><button onClick={logout}>Logout</button></Link>
+              
             </>
           ) : (
             <>
@@ -51,7 +52,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
     </nav>
-     <CartModal isOpen={isModalOpen} onClose={toggleModal} /> {/* Render the modal */}</>
+     <CartModal isOpen={isModalOpen} onClose={toggleModal} /> </>
   );
 };
 
