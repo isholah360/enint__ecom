@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Hero from "../compoent/hero";
 import AdImage from "@/compoent/adImage";
 import LatestPro from "@/compoent/latestPro";
