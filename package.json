@@ -7,9 +7,7 @@
     "client": "cd client && npm run dev",
     "server": "nodemon server.js",
     "dev": "npx concurrently \"npm run server\" \"npm run client\"",
-  
     "starts": "npm run client && npm run server",
-
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
     "dev:d": "pm2 start npm --name server -- run server && pm2 start npm --name client -- run client"
   },

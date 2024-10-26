@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import { Product } from '../lib/api'
 import { useAuth } from '../context/AuthContext'
 import { useCart } from '../context/CartContext'
 import { useRouter } from 'next/router'
