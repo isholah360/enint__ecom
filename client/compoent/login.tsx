@@ -22,13 +22,15 @@ const LoginForm: React.FC = () => {
         body: JSON.stringify({ email, password }),
         credentials: "include",
       });
-
+  
       if (!response.ok) {
         throw new Error("Login failed");
       }
-
+  
       const data = await response.json();
-      login({email: data.email, password:data.password});
+      // Call login with two arguments
+      login(data.email, data.password);
+      
       if (data) {
         router.push("/product");
       }
@@ -36,8 +38,7 @@ const LoginForm: React.FC = () => {
     } catch (error) {
       console.error("Error:", error);
     }
-  };
-
+  }
   return (
     <div className=" flex items-center justify-center min-h-screen bg-gray-100 log-width">
       <form
