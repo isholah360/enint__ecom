@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import "./nav.css";
 
 interface Product {
-  id: string;
+  id: number;
   thumbnail: string;
   title: string;
   price: number;
