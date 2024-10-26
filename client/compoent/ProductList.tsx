@@ -8,7 +8,7 @@ import { CiSearch } from "react-icons/ci";
 import "./nav.css";
 
 interface Product {
-  id: string;
+  id: number;
   thumbnail: string;
   title: string;
   price: number;
@@ -77,7 +77,9 @@ const ProductList: React.FC = () => {
       const sorted = [...products];
 
       // Sort by price
-      sorted.sort((a, b) => (sortOrder === "asc" ? a.price - b.price : b.price - a.price));
+      sorted.sort((a, b) =>
+        sortOrder === "asc" ? a.price - b.price : b.price - a.price
+      );
 
       setSortedProducts(sorted);
     };
@@ -97,6 +99,9 @@ const ProductList: React.FC = () => {
       title: data.title,
       price: data.price,
       quantity: 1,
+      thumbnail: product.thumbnail,
+      description: product.description,
+      category: product.category,
     });
   };
 
@@ -119,7 +124,9 @@ const ProductList: React.FC = () => {
             </div>
 
             <div className="w-[180px] relative p-2 flex flex-row bg-gray-500 rounded-lg items-center">
-              <p className="text-sm w-[200px] search-text">Filter by Category:</p>
+              <p className="text-sm w-[200px] search-text">
+                Filter by Category:
+              </p>
               <select
                 onChange={(e) => setFilterTerm(e.target.value)}
                 value={filterTerm}
@@ -133,7 +140,7 @@ const ProductList: React.FC = () => {
                 ))}
               </select>
             </div>
-           
+
             <div className="w-[180px] relative p-2 flex flex-row bg-gray-500 rounded-lg items-center">
               <p className="text-sm w-[200px] search-text">Sort by Price:</p>
               <select
@@ -148,9 +155,10 @@ const ProductList: React.FC = () => {
           </div>
         </div>
 
-     
-          <h1 className="text-[#16c098] font-bold ml-2 avail">Available Products</h1>
-    
+        <h1 className="text-[#16c098] font-bold ml-2 avail">
+          Available Products
+        </h1>
+
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 list-grid">
             {sortedProducts.map((data) => (
@@ -168,7 +176,9 @@ const ProductList: React.FC = () => {
                     ${data.price.toFixed(2)}
                   </span>
                 </div>
-                <p className="text-gray-600 text-2 px-4 mb-2">{data.description.slice(0, 35)}...</p>
+                <p className="text-gray-600 text-2 px-4 mb-2">
+                  {data.description.slice(0, 35)}...
+                </p>
                 <div className="flex justify-between mb-4 buton-div">
                   <button
                     onClick={() => handleAddToCart(data)}
