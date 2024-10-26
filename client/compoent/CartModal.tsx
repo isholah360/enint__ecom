@@ -3,7 +3,14 @@
 import React from "react";
 import { useCart } from "../context/CartContext";
 import "./nav.css";
-
+interface cart {
+  id: string;
+  thumbnail: string;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+}
 interface CartModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -39,7 +46,6 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
                 </div>
                 <p>Total: ${(item.price * item.quantity).toFixed(2)}</p>
               </div>
-              
             </li>
           ))}
         </ul>
