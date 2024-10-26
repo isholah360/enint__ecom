@@ -4,9 +4,27 @@ import React from 'react'
 import { useAuth } from '../context/AuthContext'
 import { useCart } from '../context/CartContext'
 import { useRouter } from 'next/router'
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  thumbnail: string;
+  description: string;
+  category: string;
+}
+
+interface CartItem {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
+  thumbnail: string;
+  description: string;
+  category: string;
+}
 
 interface ProductCardProps {
-  product: Product
+  product: Product;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
@@ -23,6 +41,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         title: product.title,
         price: product.price,
         quantity: 1,
+        quantity: 1,
+        thumbnail: product.thumbnail, 
+        description: product.description,
+        category: product.category, 
       })
     }
   }
