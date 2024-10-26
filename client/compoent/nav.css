@@ -41,6 +41,8 @@
 }
 .pro-card{
     border: solid;
+    border-color: goldenrod;
+    border-width: 1px;
     padding: .5rem .75rem;
 }
 .pro-cards{
