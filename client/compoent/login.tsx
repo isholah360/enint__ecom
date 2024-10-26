@@ -28,7 +28,7 @@ const LoginForm: React.FC = () => {
       }
 
       const data = await response.json();
-      login(data);
+      login({email:data.email, password: data.password});
       if (data) {
         router.push("/product");
       }

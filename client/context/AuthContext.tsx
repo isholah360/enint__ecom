@@ -3,13 +3,13 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 interface User {
-  id: number;
-  username: string;
+  emil: string;
+  password: string;
 }
 
 interface AuthContextType {
   user: User | null;
-  login: (username: string, password: string) => Promise<void>;
+  login: (email: string, password: string) => Promise<void>;
   logout: () => void;
 }
 
@@ -25,8 +25,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, []);
 
-  const login = async (username: string, password: string) => {
-    const mockUser = { id: 1, username };
+  const login = async (email: string, password: string) => {
+    const mockUser = { id: 1, email };
     setUser(mockUser);
     localStorage.setItem('user', JSON.stringify(mockUser));
   };
