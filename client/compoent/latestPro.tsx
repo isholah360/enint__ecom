@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import "./nav.css";
 
 interface Product {
-  id: string;
+  id: number;
   thumbnail: string;
   title: string;
   price: number;
@@ -80,6 +80,8 @@ const LatestPro: React.FC = () => {
       title: data.title,
       price: data.price,
       quantity: 1,
+      description: data.description,
+      category: data.category,
     });
   };
 

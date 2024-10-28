@@ -99,9 +99,8 @@ const ProductList: React.FC = () => {
       title: data.title,
       price: data.price,
       quantity: 1,
-      thumbnail: product.thumbnail,
-      description: product.description,
-      category: product.category,
+      description: data.description,
+      category: data.category,
     });
   };
 
